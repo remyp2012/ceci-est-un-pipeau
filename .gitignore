@@ -52,3 +52,7 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# trash
+.DS_Store
+*.swp
