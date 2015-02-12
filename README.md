@@ -25,7 +25,6 @@ Anaconda comes with a lot of useful libraries and environment management tools. 
 
 ## TODO
 - make requirements.txt
-- make skeleton classes: Problem, Solver 
 - NEOS utilities
 
 
