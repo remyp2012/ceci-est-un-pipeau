@@ -2,6 +2,7 @@
 
 import config
 import os
+import pickle
 
 class Problem():
     'Container of problem data'
@@ -10,15 +11,16 @@ class Problem():
         #raise NotImplementedError
  
     @classmethod
-    def load(cls, filename): 
-        'create a problem using existing file'
+    def read(cls, filename): 
+        'create a problem with text problem file'
         path = os.path.join(config.PROBLEMS, filename)
         with open(path, 'r') as fin:
+            # parse input
             pass
         
     def dump(self, filename):
         path = os.path.join(config.PROBLEMS, filename)
-        with open(filename, 'w') as fout:
+        with open(path, 'w') as fout:
             pass
     
     def solve(self, *args):
@@ -36,12 +38,27 @@ class Solution():
     
     @classmethod
     def load(cls, filename):
-        'create a solution using existing file'
+        'load solution (probably incomplete) from pickle file'
         path = os.path.join(config.SOLUTIONS, filename)
         with open(path, 'r') as fin:
-            pass    
+            return pickle.load(fin)
         
+    def save(self, filename):
+        'save to pickle file'
+        path = os.path.join(config.SOLUTIONS, filename)
+        with open(path, 'r') as fin:
+            pickle.dump(self, fin)
+    
+    @classmethod
+    def read(cls, filename):
+        'read a text solution file'
+        path = os.path.join(config.SOLUTIONS, filename)
+        with open(path, 'r') as fin:
+            # parse input
+            pass
+    
     def dump(self, filename):
+        'dump text solution file for submission'
         path = os.path.join(config.PROBLEMS, filename)
         with open(path, 'w') as fout:
             pass
