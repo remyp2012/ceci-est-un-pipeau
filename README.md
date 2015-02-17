@@ -1,19 +1,51 @@
 # ceci-est-un-pipeau
 
-This repo will be used for our upcoming contest. This file contains organisation information.
+This file contains organisation information.
 
 ## Environment Setup
 
+We will be using the latest Python2.
+
 It may take quite a while to install some packages. To save time, it is preferable to do this before the contest.
 
-### [Anaconda](https://store.continuum.io/cshop/anaconda/) (Recommended)
+### [Anaconda](https://store.continuum.io/cshop/anaconda/)
 
 Anaconda comes with a lot of useful libraries and environment management tools. It's easy to set up.
 
-### virtualenv
+After installing, go to the repo and use
+```(sh)
+conda env create -n pipeau
+```
+to create a environment named ```pipeau``` containing packages in ```environment.yml```.
+
+To (de)activate the environment:
+```(sh)
+source activate pipeau
+source deactivate pipeau
+```
+
+To install a new package and share with others:
+```(sh)
+# install in pipeau environment
+conda install <name of package>
+pip install <name of package> # if conda failed
+conda env export -n pipeau -f environment.yml
+# in git, push changes in environment.yml to remote
+```
+To get packages that others shared:
+```(sh)
+# pull changes from remote
+conda env update -n pipeau
+```
+Some handy repls/editors from anaconda:
+```(sh)
+ipython
+ipython qtconsole
+spyder
+# and others
+```
 
 
-[Here](http://www.jontourage.com/2011/02/09/virtualenv-pip-basics/) is a tutorial of virtualenv. Use ```requirements.txt``` (non existing) in the repo to set up.
 
 ## Strategies
 
@@ -24,8 +56,5 @@ Anaconda comes with a lot of useful libraries and environment management tools. 
 
 
 ## TODO
-- make requirements.txt
-- NEOS utilities
-
 
 
