@@ -8,7 +8,7 @@ We will be using the latest Python2.
 
 It may take quite a while to install some packages. To save time, it is preferable to do this before the contest.
 
-### [Anaconda](https://store.continuum.io/cshop/anaconda/)
+### [Anaconda](http://continuum.io/downloads)
 
 Anaconda comes with a lot of useful libraries and environment management tools. It's easy to set up.
 
